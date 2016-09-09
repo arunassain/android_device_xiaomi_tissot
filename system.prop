@@ -36,9 +36,6 @@ vendor.audio.offload.multiaac.enable=true
 vendor.audio.flac.sw.decoder.24bit=true
 ro.config.media_vol_steps=25
 
-#low audio flinger standby delay to reduce power consumption
-ro.audio.flinger_standbytime_ms=300
-
 # Bluetooth
 bluetooth.hfp.client=1
 qcom.bluetooth.soc=smd
@@ -89,10 +86,6 @@ ro.fm.transmitter=false
 
 # Frp
 ro.frp.pst=/dev/block/bootdevice/by-name/config
-
-# Fling Velocity
-ro.min.fling_velocity=160
-ro.max.fling_velocity=20000
 
 # GPS
 persist.gps.qc_nlp_in_use=1
@@ -179,9 +172,3 @@ wifi.interface=wlan0
 
 # Property to enable display default color mode
 vendor.display.enable_default_color_mode=1
-
- #ADB
-ro.debuggable=1
-persist.sys.usb.config=adb
-ro.secure=0
-ro.adb.secure=0
