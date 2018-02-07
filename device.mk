@@ -244,6 +244,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-service \
     android.hardware.health@1.0
 
+# Healthd
+PRODUCT_PACKAGES += \
+    chargeonlymode
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
