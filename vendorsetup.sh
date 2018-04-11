@@ -1,0 +1,2 @@
+add_lunch_combo du_tissot-user
+add_lunch_combo du_tissot-userdebug

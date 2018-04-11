@@ -16,8 +16,8 @@
 
 $(call inherit-product, device/xiaomi/tissot/full_tissot.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+# Inherit some common DirtyUnicorns stuff.
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
 
 # A/B updater
 AB_OTA_UPDATER := true
@@ -52,7 +52,7 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libgptutils \
     libz
 
-PRODUCT_NAME := rr_tissot
+PRODUCT_NAME := du_tissot
 BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
