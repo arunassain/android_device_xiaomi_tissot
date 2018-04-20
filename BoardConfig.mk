@@ -237,5 +237,8 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_HIDL_FEATURE_AWARE := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := /system/vendor/lib/hw/camera.msm8953.so|libshims_skia.so
+
 # Inherit from the proprietary version
 -include vendor/xiaomi/tissot/BoardConfigVendor.mk
