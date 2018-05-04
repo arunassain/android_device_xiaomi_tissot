@@ -1,1 +1,1 @@
-add_lunch_combo carbon_tissot-user
+add_lunch_combo liquid_tissot-userdebug
