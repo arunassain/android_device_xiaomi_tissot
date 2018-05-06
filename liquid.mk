@@ -59,7 +59,7 @@ PRODUCT_DEVICE := tissot
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="tissot-user 8.0.0 OPR1.170623.026 8.1.10 release-keys"
+    PRIVATE_BUILD_DESC="tissot-user 8.1.0 OPM2.171019.029 8.4.28 release-keys"
     DEVICE_MAINTAINERS="VenkatVV (venky_holmes)"
 
-BUILD_FINGERPRINT := xiaomi/tissot/tissot_sprout:8.0.0/OPR1.170623.026/8.1.10:user/release-keys
+BUILD_FINGERPRINT := xiaomi/tissot/tissot_sprout:8.1.0/OPM2.171019.029/8.4.28:user/release-keys
