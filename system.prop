@@ -5,7 +5,10 @@
 # Audio
 vendor.voice.playback.conc.disabled=true
 vendor.voice.record.conc.disabled=false
-vendor.voice.voip.conc.disabled=true
+vendor.voice.voip.conc.disabled=true \
+vendor.audio.use.dts_eagle=true \
+use.dts_eagle=true \
+hpx_send_params=1
 vendor.voice.conc.fallbackpath=deep-buffer
 vendor.audio.parser.ip.buffer.size=0
 vendor.audio_hal.period_size=192
