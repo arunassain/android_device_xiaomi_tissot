@@ -31,3 +31,6 @@
 
 # Bluetooth
 /(vendor|system/vendor)/bin/hci_qcomm_init                      u:object_r:qti_init_shell_exec:s0
+
+# DTS EAGLE
+/dev/dts_eagle			      u:object_r:audio_device:s0
