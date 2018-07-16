@@ -551,6 +551,9 @@ vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
+# Sysconfig
+etc/sysconfig/nexus.xml
+
 # Thermal
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
