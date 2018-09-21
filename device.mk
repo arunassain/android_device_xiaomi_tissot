@@ -33,8 +33,8 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 # HWUI overrides
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
+#$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+#$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -123,7 +123,8 @@ PRODUCT_PACKAGES += \
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    android.hardware.boot@1.0-service \
+    bootctrl.msm8953
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
@@ -136,14 +137,12 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8953 \
-    libmm-qcamera \
-    Gcam
-
-PRODUCT_PACKAGES += \
-    camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
+    camera.device@3.2-impl \
+    camera.msm8953 \
+    libmm-qcamera \
+    Snap \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
@@ -192,10 +191,6 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes \
     libebtc
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    libkeymaster1
 
 # FM
 PRODUCT_PACKAGES += \
@@ -346,6 +341,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.sensors.sh \
     init.qcom.usb.rc \
+    init.qcom.usb.sh \
     init.target.rc \
     ueventd.qcom.rc
 
@@ -362,8 +358,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librmnetctl \
     libcnefeatureconfig \
-    libxml2
-
+    libxml2 \
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
@@ -427,27 +422,25 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     libcld80211 \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
-    hostapd_cli \
     dhcpcd.conf \
-    libwifi-hal-qcom \
+    wificond \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    libcurl
-
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0 \
-    android.hardware.wifi@1.0-service
+    wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
+
 
 # Verity
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/7824900.sdhci/by-name/system
